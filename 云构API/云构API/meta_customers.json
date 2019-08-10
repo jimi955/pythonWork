@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "metaName": "clue",
+    "fields": [
+      "name",
+      "leadSource",
+      "companyName",
+      "returnTimes",
+      "returnTime",
+      "returnReason",
+      "owner",
+      "claimDate",
+      "dueDate"
+    ]
+  },
+  "filter": {
+    "conj": "advance",
+    "expr": ""
+  },
+  "scope": 1,
+  "sorts": [
+    {
+      "field": "updatedOn",
+      "orderType": 0
+    }
+  ]
+}
