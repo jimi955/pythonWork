@@ -2,10 +2,10 @@ import requests
 from lxml import etree
 import time
 
-file = open("beijing.csv", "wb")
+file = open("beijing.csv", "w", encoding='utf-8')
 failedfile = open("failedPage.txt", "w")
 successfile = open("successPage.txt", "w")
-file.write("序号,单位名称,纳税人识别号,主管税务机关,评价结果,评价年度\n".encode("utf-8"))
+file.write("序号,单位名称,纳税人识别号,主管税务机关,评价结果,评价年度\n")
 
 # for page in range(1, 3):
 for page in range(1, 5615):
@@ -34,7 +34,7 @@ for page in range(1, 5615):
                     result = tr.xpath("td[5]/text()")[0].replace("\r\n", "").strip()
                     year = tr.xpath("td[6]/text()")[0].replace("\r\n", "").strip()
                     line = num + "," + comname + "," + pid + "," + partment + "," + result + "," + year + "\n"
-                    file.write(line.encode("utf-8"))
+                    file.write(line)
                 except Exception as e:
                     print(e)
         print("第" + str(page) + "页成功")

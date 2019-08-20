@@ -17,7 +17,7 @@ headers = {
     "Upgrade-Insecure-Requests": "1",
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36",
 }
-file = open("liaoning.csv", "w")
+file = open("liaoningss.csv", "w", encoding='utf-8')
 failedfile = open("failedPage.txt", "w")
 successfile = open("successPage.txt", "w")
 file.write("编号	纳税人识别号,纳税人名称,信用级别,评价年度,税务机关\n")
@@ -56,7 +56,7 @@ for page in range(1, 22869):
 
     except Exception as e:
         print(str(page) + "失败")
-        failedfile.write(str(page) + "\n")
+        failedfile.write(str(page) + "\n", )
 file.close()
 failedfile.close()
 successfile.close()
